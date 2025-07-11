@@ -16,9 +16,9 @@ int	main(int argc, char **argv)
 	give_index(pile_a, tab);
 	if (check_doublons(pile_a))
 		return (printf("Error\n"));
-	print_piles(pile_a, pile_b);
+//	print_piles(pile_a, pile_b);
 	cost_sort(pile_a, pile_b);
-	print_piles(pile_a, pile_b);
+//	print_piles(pile_a, pile_b);
 	free_pile(pile_a);
 	free_pile(pile_b);
 	return (0);
