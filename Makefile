@@ -10,30 +10,37 @@
 #                                                                              #
 # **************************************************************************** #
 
-NAME	= push_swap
+NAME		= push_swap
+BONUS_NAME	= checker
 
-CC		= cc
-CFLAGS	= -Wall -Wextra -Werror -Iinclude
+CC			= cc
+CFLAGS		= -Wall -Wextra -Werror -Iinclude
 
-SRC_DIR	= src
-OBJ_DIR	= obj
+SRC_DIR		= src
+OBJ_DIR		= obj
+BONUS_DIR	= bonus
 
-SRC		= \
-		src/main.c \
-		src/core.c \
-		src/analysis_a.c \
-		src/analysis_b.c \
-		src/cases.c \
-		src/cases_bis.c \
-		src/instructions.c \
-		src/quick_sort.c \
-		src/utils.c \
-		src/utils_bis.c \
-		src/utils_ter.c \
-		src/instructions_bis.c \
-		src/utils_quater.c 
+SRC			= \
+			src/main.c \
+			src/core.c \
+			src/analysis_a.c \
+			src/analysis_b.c \
+			src/cases.c \
+			src/cases_bis.c \
+			src/instructions.c \
+			src/quick_sort.c \
+			src/utils.c \
+			src/utils_bis.c \
+			src/utils_ter.c \
+			src/instructions_bis.c \
+			src/utils_quater.c 
 
-OBJ		= $(SRC:$(SRC_DIR)/%.c=$(OBJ_DIR)/%.o)
+BONUS_SRC	= \
+			bonus/get_next_line.c \
+			bonus/get_next_line_utils.c
+
+OBJ			= $(SRC:%.c=$(OBJ_DIR)/%.o)
+BONUS_OBJ	= $(BONUS_SRC:%.c=$(OBJ_DIR)/%.o)
 
 
 all: $(NAME)
@@ -41,16 +48,21 @@ all: $(NAME)
 $(NAME): $(OBJ)
 	$(CC) $(CFLAGS) -o $@ $^
 
-$(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
-	@mkdir -p $(OBJ_DIR) 
+bonus: $(BONUS_NAME)
+
+$(BONUS_NAME): $(OBJ) $(BONUS_OBJ)
+	$(CC) $(CFLAGS) -o $@ $^
+
+$(OBJ_DIR)/%.o: %.c
+	@mkdir -p $(dir $@) 
 	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
 	rm -rf $(OBJ_DIR)
 
 fclean: clean
-	rm -f $(NAME)
+	rm -f $(NAME) $(BONUS_NAME)
 
 re: fclean all
 
-.PHONY: all clean fclean re 
+.PHONY: all clean fclean re bonus 
