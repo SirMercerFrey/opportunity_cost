@@ -6,7 +6,7 @@
 #    By: mcharret <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/07/11 16:27:50 by mcharret          #+#    #+#              #
-#    Updated: 2025/07/11 18:17:22 by mcharret         ###   ########.fr        #
+#    Updated: 2025/07/12 18:14:37 by mcharret         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -37,7 +37,15 @@ SRC			= \
 
 BONUS_SRC	= \
 			bonus/get_next_line.c \
-			bonus/get_next_line_utils.c
+			bonus/get_next_line_utils.c \
+			bonus/instructions.c \
+			bonus/instructions_bis.c \
+			bonus/utils.c \
+			bonus/utils_bis.c \
+			bonus/utils_ter.c \
+			bonus/utils_quater.c \
+			bonus/checking.c \
+			bonus/main.c 
 
 OBJ			= $(SRC:%.c=$(OBJ_DIR)/%.o)
 BONUS_OBJ	= $(BONUS_SRC:%.c=$(OBJ_DIR)/%.o)
@@ -50,7 +58,7 @@ $(NAME): $(OBJ)
 
 bonus: $(BONUS_NAME)
 
-$(BONUS_NAME): $(OBJ) $(BONUS_OBJ)
+$(BONUS_NAME): $(BONUS_OBJ)
 	$(CC) $(CFLAGS) -o $@ $^
 
 $(OBJ_DIR)/%.o: %.c

@@ -32,8 +32,8 @@ void	rotate_b(t_head *pile_b)
 
 void	rotate_both(t_head *pile_a, t_head *pile_b)
 {
-	if (rotate(pile_a) && rotate(pile_b))
-		printf("rr\n");
+	rotate(pile_a);
+	rotate(pile_b);
 }
 
 int	reverse_rotate(t_head *pile)
@@ -69,6 +69,6 @@ void	reverse_rotate_b(t_head *pile_b)
 
 void	reverse_rotate_both(t_head *pile_a, t_head *pile_b)
 {
-	if (reverse_rotate(pile_a) && reverse_rotate(pile_b))
-		printf("rrr\n");
+	reverse_rotate(pile_a);
+	reverse_rotate(pile_b);
 }

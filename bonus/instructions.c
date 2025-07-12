@@ -24,7 +24,7 @@ int	swap(t_head *pile)
 void	swap_a(t_head *pile_a)
 {
 	if (swap(pile_a))
-		printf("sa\n");
+		write(0,"sa\n", 3);
 }
 
 void	swap_b(t_head *pile_b)
@@ -35,8 +35,8 @@ void	swap_b(t_head *pile_b)
 
 void	swap_both(t_head *pile_a, t_head *pile_b)
 {
-	if (swap(pile_a) && swap(pile_b))
-		printf("ss\n");
+	swap(pile_a);
+	swap(pile_b);
 }
 
 int	push(t_head *from, t_head *to)
