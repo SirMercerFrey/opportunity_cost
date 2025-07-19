@@ -29,21 +29,21 @@ SRC			= \
 			src/cases_bis.c \
 			src/instructions.c \
 			src/quick_sort.c \
-			src/utils.c \
-			src/utils_bis.c \
-			src/utils_ter.c \
+			src/pile_utils.c \
+			src/atoi_utils.c \
+			src/split_utils.c \
 			src/instructions_bis.c \
-			src/utils_quater.c 
+			src/parsing.c 
 
 BONUS_SRC	= \
 			bonus/get_next_line.c \
 			bonus/get_next_line_utils.c \
 			bonus/instructions.c \
 			bonus/instructions_bis.c \
-			bonus/utils.c \
-			bonus/utils_bis.c \
-			bonus/utils_ter.c \
-			bonus/utils_quater.c \
+			bonus/pile_utils.c \
+			bonus/atoi_utils.c \
+			bonus/split_utils.c \
+			bonus/parsing.c \
 			bonus/checking.c \
 			bonus/main.c 
 
