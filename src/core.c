@@ -6,7 +6,7 @@
 /*   By: mcharret <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/11 17:34:31 by mcharret          #+#    #+#             */
-/*   Updated: 2025/07/11 18:08:02 by mcharret         ###   ########.fr       */
+/*   Updated: 2025/07/21 15:19:10 by mcharret         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -114,7 +114,7 @@ void	find_and_move_index_zero(t_head *pile_a)
 	while (tmp)
 	{
 		if (tmp->index == 0)
-			break;
+			break ;
 		++pos;
 		tmp = tmp->next;
 	}

@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   parsing.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mcharret <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/07/21 15:33:24 by mcharret          #+#    #+#             */
+/*   Updated: 2025/07/21 15:40:15 by mcharret         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 void	preambule(int argc, char **argv, t_head *pile_a)
@@ -15,7 +27,7 @@ void	preambule(int argc, char **argv, t_head *pile_a)
 		j = 0;
 		while (split[j])
 		{
-			if(!is_valid_number(split[j]))
+			if (!is_valid_number(split[j]))
 			{
 				printf("Error\n");
 				free_split(split);
@@ -69,7 +81,7 @@ int	is_valid_number(char *str)
 	while (*str >= '0' && *str <= '9')
 	{
 		num = num * 10 + (*str - '0');
-		if ((sign == 1 && num > INT_MAX) || (sign == -1 && -num < INT_MIN))
+		if ((sign == 1 && num > INT_MAX) || (sign == -1 && num * -1 < INT_MIN))
 			return (0);
 		str++;
 	}

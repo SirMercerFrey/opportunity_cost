@@ -6,7 +6,7 @@
 /*   By: mcharret <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/11 17:34:31 by mcharret          #+#    #+#             */
-/*   Updated: 2025/07/11 18:15:10 by mcharret         ###   ########.fr       */
+/*   Updated: 2025/07/21 15:18:25 by mcharret         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ void	case_two(t_head *pile_a, t_head *pile_b, t_node *node)
 	push_a(pile_b, pile_a);
 }
 
-void    case_three(t_head *pile_a, t_head *pile_b, t_node *node)
+void	case_three(t_head *pile_a, t_head *pile_b, t_node *node)
 {
 	while (node->cost_b--)
 	{

@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mcharret <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/07/21 15:45:31 by mcharret          #+#    #+#             */
+/*   Updated: 2025/07/21 15:45:53 by mcharret         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 int	main(int argc, char **argv)
@@ -16,9 +28,9 @@ int	main(int argc, char **argv)
 	give_index(pile_a, tab);
 	if (check_doublons(pile_a))
 		return (printf("Error\n"));
-//	print_piles(pile_a, pile_b);
+	print_piles(pile_a, pile_b);
 	cost_sort(pile_a, pile_b);
-//	print_piles(pile_a, pile_b);
+	print_piles(pile_a, pile_b);
 	free_pile(pile_a);
 	free_pile(pile_b);
 	return (0);
