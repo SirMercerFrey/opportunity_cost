@@ -6,7 +6,7 @@
 #    By: mcharret <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/07/11 16:27:50 by mcharret          #+#    #+#              #
-#    Updated: 2025/07/12 18:14:37 by mcharret         ###   ########.fr        #
+#    Updated: 2025/07/21 15:48:35 by mcharret         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,12 +27,14 @@ SRC			= \
 			src/analysis_b.c \
 			src/cases.c \
 			src/cases_bis.c \
-			src/instructions.c \
+			src/swap.c \
+			src/push.c \
+			src/rotate.c \
+			src/reverse_rotate.c \
 			src/quick_sort.c \
 			src/pile_utils.c \
 			src/atoi_utils.c \
 			src/split_utils.c \
-			src/instructions_bis.c \
 			src/parsing.c 
 
 BONUS_SRC	= \
