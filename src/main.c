@@ -26,6 +26,11 @@ int	main(int argc, char **argv)
 		return (printf("\n"));
 	}
 	preambule(argc, argv, pile_a);
+	if (!pile_a->size)
+	{
+		free_piles(pile_a, pile_b);
+		return (0);
+	}
 	tab = create_tab(pile_a);
 	quick_sort(tab, 0, pile_a->size - 1);
 	give_index(pile_a, tab);

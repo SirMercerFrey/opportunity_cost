@@ -36,7 +36,7 @@ SRC			= \
 			src/atoi_utils.c \
 			src/split_utils.c \
 			src/parsing.c \
-			src/free_utils.c \
+			src/free_utils.c
 
 BONUS_SRC	= \
 			bonus/get_next_line.c \

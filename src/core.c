@@ -47,6 +47,8 @@ void	cost_sort(t_head *pile_a, t_head *pile_b)
 	long	size;
 
 	size = pile_a->size;
+	if (pile_a->size < 3)
+		return (edge_sort(pile_a), (void)0);
 	while (pile_a->size > 3)
 	{
 		push_b(pile_a, pile_b);

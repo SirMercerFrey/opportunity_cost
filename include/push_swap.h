@@ -100,5 +100,6 @@ int		is_sorted(t_head *pile_a);
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
 void	free_piles_tab(t_head *pile_a, t_head *pile_b, int *tab);
 void	free_piles(t_head *pile_a, t_head *pile_b);
+void	edge_sort(t_head *pile_a);
 
 #endif

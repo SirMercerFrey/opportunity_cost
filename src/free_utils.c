@@ -14,13 +14,21 @@
 
 void	free_piles_tab(t_head *pile_a, t_head *pile_b, int *tab)
 {
-	free(pile_a);
-	free(pile_b);
+	free_pile(pile_a);
+	free_pile(pile_b);
 	free(tab);
 }
 
 void	free_piles(t_head *pile_a, t_head *pile_b)
 {
-	free(pile_a);
-	free(pile_b);
+	free_pile(pile_a);
+	free_pile(pile_b);
+}
+
+void	edge_sort(t_head *pile_a)
+{
+	if (pile_a->size == 1)
+		return ;
+	if (pile_a->first->index > pile_a->first->next->index)
+		swap_a(pile_a);
 }

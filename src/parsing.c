@@ -31,15 +31,14 @@ void	preambule(int argc, char **argv, t_head *pile_a)
 			{
 				printf("Error\n");
 				free_split(split);
-				exit(EXIT_FAILURE);
+				return ;
 			}
 			ft_lst_add_back(&pile_a, create_element(ft_atoi(split[j])));
 			++j;
 		}
-//`		free_split(split);
+		free_split(split);
 		++i;
 	}
-	free_split(split);
 }
 
 int	check_doublons(t_head *pile)
