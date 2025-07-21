@@ -1,46 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   atoi_utils.c                                       :+:      :+:    :+:   */
+/*   reverse_rotate.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mcharret <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/21 16:12:43 by mcharret          #+#    #+#             */
-/*   Updated: 2025/07/21 16:12:44 by mcharret         ###   ########.fr       */
+/*   Created: 2025/07/21 15:20:38 by mcharret          #+#    #+#             */
+/*   Updated: 2025/07/21 16:11:54 by mcharret         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap_bonus.h"
 
-int	is_spaces(char c)
+int	reverse_rotate(t_head *pile)
 {
-	return (c == ' ' || (c >= 9 && c <= 13));
+	t_node	*last;
+	t_node	*before_last;
+
+	if (!pile || pile->size < 2)
+		return (0);
+	last = pile->last;
+	before_last = last->prev;
+	before_last->next = NULL;
+	pile->last = before_last;
+	last->next = pile->first;
+	last->prev = NULL;
+	pile->first->prev = last;
+	pile->first = last;
+	return (1);
 }
 
-int	is_operator(char c)
+void	reverse_rotate_both(t_head *pile_a, t_head *pile_b)
 {
-	return (c == '+' || c == '-');
-}
-
-int	ft_atoi(char *str)
-{
-	int		result;
-	int		sign;
-
-	while (*str && is_spaces(*str))
-		++str;
-	sign = 1;
-	if (is_operator(*str))
-	{
-		if (*str == '-')
-			sign *= -1;
-		++str;
-	}
-	result = 0;
-	while (*str && *str >= '0' && *str <= '9')
-	{
-		result = result * 10 + *str - '0';
-		++str;
-	}
-	return (sign * result);
+	reverse_rotate(pile_a);
+	reverse_rotate(pile_b);
 }

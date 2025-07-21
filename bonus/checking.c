@@ -1,9 +1,21 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   checking.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mcharret <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/07/21 16:12:58 by mcharret          #+#    #+#             */
+/*   Updated: 2025/07/21 16:51:19 by mcharret         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap_bonus.h" 
 
 void	execute_instruction(char *line, t_head *pile_a, t_head *pile_b)
 {
 	if (!ft_strncmp(line, "sa\n", 3))
-		swap_a(pile_a);
+		swap(pile_a);
 	else if (!ft_strncmp(line, "sb\n", 3))
 		swap(pile_b);
 	else if (!ft_strncmp(line, "ss\n", 3))
@@ -56,3 +68,10 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 	return (0);
 }
 
+void	checking_sort(t_head *pile_a, t_head *pile_b)
+{
+	if (is_sorted(pile_a) && !pile_b->size)
+		write(1, "OK\n", 3);
+	else
+		write(1, "KO\n", 3);
+}

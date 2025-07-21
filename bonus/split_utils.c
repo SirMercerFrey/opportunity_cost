@@ -1,6 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   split_utils.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mcharret <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/07/21 16:16:10 by mcharret          #+#    #+#             */
+/*   Updated: 2025/07/21 16:16:54 by mcharret         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap_bonus.h"
 
-int		count_words(char *str)
+int	count_words(char *str)
 {
 	int		count;
 	int		in_word;
@@ -84,7 +96,9 @@ char	**ft_split_by_space(char *str)
 
 void	free_split(char **split)
 {
-	int	i = 0;
+	int	i;
+
+	i = 0;
 	while (split && split[i])
 		free(split[i++]);
 	free(split);

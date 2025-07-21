@@ -1,46 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   atoi_utils.c                                       :+:      :+:    :+:   */
+/*   push.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mcharret <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/21 16:12:43 by mcharret          #+#    #+#             */
-/*   Updated: 2025/07/21 16:12:44 by mcharret         ###   ########.fr       */
+/*   Created: 2025/07/21 15:19:32 by mcharret          #+#    #+#             */
+/*   Updated: 2025/07/21 16:09:25 by mcharret         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap_bonus.h"
 
-int	is_spaces(char c)
+int	push(t_head *from, t_head *to)
 {
-	return (c == ' ' || (c >= 9 && c <= 13));
-}
+	t_node	*node;
 
-int	is_operator(char c)
-{
-	return (c == '+' || c == '-');
-}
-
-int	ft_atoi(char *str)
-{
-	int		result;
-	int		sign;
-
-	while (*str && is_spaces(*str))
-		++str;
-	sign = 1;
-	if (is_operator(*str))
-	{
-		if (*str == '-')
-			sign *= -1;
-		++str;
-	}
-	result = 0;
-	while (*str && *str >= '0' && *str <= '9')
-	{
-		result = result * 10 + *str - '0';
-		++str;
-	}
-	return (sign * result);
+	if (!from || from->size == 0)
+		return (0);
+	node = from->first;
+	from->first = node->next;
+	if (from->first)
+		from->first->prev = NULL;
+	else
+		from->last = NULL;
+	from->size--;
+	node->next = to->first;
+	if (to->first)
+		to->first->prev = node;
+	else
+		to->last = node;
+	node->prev = NULL;
+	to->first = node;
+	to->size++;
+	return (1);
 }

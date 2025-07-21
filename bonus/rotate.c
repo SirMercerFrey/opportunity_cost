@@ -1,46 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   atoi_utils.c                                       :+:      :+:    :+:   */
+/*   rotate.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mcharret <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/21 16:12:43 by mcharret          #+#    #+#             */
-/*   Updated: 2025/07/21 16:12:44 by mcharret         ###   ########.fr       */
+/*   Created: 2025/07/21 15:20:38 by mcharret          #+#    #+#             */
+/*   Updated: 2025/07/21 16:10:38 by mcharret         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap_bonus.h"
 
-int	is_spaces(char c)
+int	rotate(t_head *pile)
 {
-	return (c == ' ' || (c >= 9 && c <= 13));
+	t_node	*first;
+	t_node	*second;
+
+	if (!pile || pile->size < 2)
+		return (0);
+	first = pile->first;
+	second = first->next;
+	second->prev = NULL;
+	pile->first = second;
+	first->next = NULL;
+	first->prev = pile->last;
+	pile->last->next = first;
+	pile->last = first;
+	return (1);
 }
 
-int	is_operator(char c)
+void	rotate_both(t_head *pile_a, t_head *pile_b)
 {
-	return (c == '+' || c == '-');
-}
-
-int	ft_atoi(char *str)
-{
-	int		result;
-	int		sign;
-
-	while (*str && is_spaces(*str))
-		++str;
-	sign = 1;
-	if (is_operator(*str))
-	{
-		if (*str == '-')
-			sign *= -1;
-		++str;
-	}
-	result = 0;
-	while (*str && *str >= '0' && *str <= '9')
-	{
-		result = result * 10 + *str - '0';
-		++str;
-	}
-	return (sign * result);
+	rotate(pile_a);
+	rotate(pile_b);
 }

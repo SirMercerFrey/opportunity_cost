@@ -6,7 +6,7 @@
 #    By: mcharret <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/07/11 16:27:50 by mcharret          #+#    #+#              #
-#    Updated: 2025/07/21 15:48:35 by mcharret         ###   ########.fr        #
+#    Updated: 2025/07/21 16:24:25 by mcharret         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -40,8 +40,10 @@ SRC			= \
 BONUS_SRC	= \
 			bonus/get_next_line.c \
 			bonus/get_next_line_utils.c \
-			bonus/instructions.c \
-			bonus/instructions_bis.c \
+			bonus/push.c \
+			bonus/swap.c \
+			bonus/rotate.c \
+			bonus/reverse_rotate.c \
 			bonus/pile_utils.c \
 			bonus/atoi_utils.c \
 			bonus/split_utils.c \

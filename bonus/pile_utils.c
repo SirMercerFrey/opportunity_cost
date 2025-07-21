@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   pile_utils.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mcharret <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/07/21 16:14:27 by mcharret          #+#    #+#             */
+/*   Updated: 2025/07/21 16:15:09 by mcharret         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap_bonus.h"
 
 t_head	*create_pile(void)
@@ -47,28 +59,6 @@ void	ft_lst_add_back(t_head **pile, t_node *elem)
 	elem->prev = (*pile)->last;
 	(*pile)->last = elem;
 	++(*pile)->size;
-}
-
-void	print_piles(t_head *pile_a, t_head *pile_b)
-{
-	t_node	*tmp;
-
-	if (!pile_a || !pile_b)
-		return ;
-	tmp = pile_a->first;
-	while (tmp)
-	{
-		printf("\\_%ld_/ [%ld]\n", *&(tmp->val), *&(tmp->index));
-		tmp = tmp->next;
-	}
-	printf(" pile a (%ld elements)\n", pile_a->size);
-	tmp = pile_b->first;
-	while (tmp)
-	{
-		printf("\\_%ld_/ [%ld] (pb :%ld / cb : %ld/ fb : %d) (pa :%ld / ca : %ld/ fa : %d) |rc : %ld|\n", *&(tmp->val), *&(tmp->index), *&(tmp->pos_b), *&(tmp->cost_b), *&(tmp->flag_b), *&(tmp->pos_a), *&(tmp->cost_a), *&(tmp->flag_a), *&(tmp->real_cost));
-		tmp = tmp->next;
-	}
-	printf(" pile b (%ld elements)\n", pile_b->size);
 }
 
 void	free_pile(t_head *pile)

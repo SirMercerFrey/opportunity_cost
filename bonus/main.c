@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mcharret <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/07/21 16:22:46 by mcharret          #+#    #+#             */
+/*   Updated: 2025/07/21 16:54:02 by mcharret         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap_bonus.h"
 #include "get_next_line.h"
 
@@ -18,14 +30,11 @@ int	main(int argc, char **argv)
 	{
 		line = get_next_line(0);
 		if (!line)
-			break;
+			break ;
 		execute_instruction(line, pile_a, pile_b);
 		free(line);
 	}
-	if (is_sorted(pile_a) && !pile_b->size)
-		write(1, "OK\n", 3);
-	else
-		write(1, "KO\n", 3);
+	checking_sort(pile_a, pile_b);
 	free_pile(pile_a);
 	free_pile(pile_b);
 	return (0);
