@@ -6,7 +6,7 @@
 /*   By: mcharret <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/21 15:01:58 by mcharret          #+#    #+#             */
-/*   Updated: 2025/07/21 15:15:06 by mcharret         ###   ########.fr       */
+/*   Updated: 2025/07/21 18:28:19 by mcharret         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,5 +98,7 @@ void	find_and_move_index_zero(t_head *pile_a);
 void	execute_instruction(char *line, t_head *pile_a, t_head *pile_b);
 int		is_sorted(t_head *pile_a);
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
+void	free_piles_tab(t_head *pile_a, t_head *pile_b, int *tab);
+void	free_piles(t_head *pile_a, t_head *pile_b);
 
 #endif

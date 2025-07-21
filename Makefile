@@ -6,7 +6,7 @@
 #    By: mcharret <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/07/11 16:27:50 by mcharret          #+#    #+#              #
-#    Updated: 2025/07/21 16:24:25 by mcharret         ###   ########.fr        #
+#    Updated: 2025/07/21 18:29:02 by mcharret         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,7 +35,8 @@ SRC			= \
 			src/pile_utils.c \
 			src/atoi_utils.c \
 			src/split_utils.c \
-			src/parsing.c 
+			src/parsing.c \
+			src/free_utils.c \
 
 BONUS_SRC	= \
 			bonus/get_next_line.c \

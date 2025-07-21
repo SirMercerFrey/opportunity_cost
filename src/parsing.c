@@ -6,7 +6,7 @@
 /*   By: mcharret <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/21 15:33:24 by mcharret          #+#    #+#             */
-/*   Updated: 2025/07/21 15:40:15 by mcharret         ###   ########.fr       */
+/*   Updated: 2025/07/21 18:47:17 by mcharret         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,9 +36,10 @@ void	preambule(int argc, char **argv, t_head *pile_a)
 			ft_lst_add_back(&pile_a, create_element(ft_atoi(split[j])));
 			++j;
 		}
-		free(split);
+//`		free_split(split);
 		++i;
 	}
+	free_split(split);
 }
 
 int	check_doublons(t_head *pile)
