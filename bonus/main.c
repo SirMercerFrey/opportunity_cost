@@ -22,10 +22,21 @@ int	main(int argc, char **argv)
 	pile_a = create_pile();
 	pile_b = create_pile();
 	if (argc < 2)
+	{
+		free_piles(pile_a, pile_b);
 		return (printf("\n"));
-	preambule(argc, argv, pile_a);
-	if (check_doublons(pile_a))
+	}
+	preambule(argc, argv, pile_a, pile_b);
+	if (!pile_a->size)
+	{
+		free_piles(pile_a, pile_b);
 		return (printf("Error\n"));
+	}
+	if (check_doublons(pile_a))
+	{
+		free_piles(pile_a, pile_b);
+		return (printf("Error\n"));
+	}
 	while (1)
 	{
 		line = get_next_line(0);
@@ -35,7 +46,6 @@ int	main(int argc, char **argv)
 		free(line);
 	}
 	checking_sort(pile_a, pile_b);
-	free_pile(pile_a);
-	free_pile(pile_b);
+	free_piles(pile_a, pile_b);
 	return (0);
 }

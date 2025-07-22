@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "push_swap_bonus.h" 
+#include "get_next_line.h"
 
 void	execute_instruction(char *line, t_head *pile_a, t_head *pile_b)
 {
@@ -36,6 +37,13 @@ void	execute_instruction(char *line, t_head *pile_a, t_head *pile_b)
 		reverse_rotate(pile_b);
 	else if (!ft_strncmp(line, "rrr\n", 4))
 		reverse_rotate_both(pile_a, pile_b);
+	else
+	{
+		free(line);
+		write(1,"Error\n",6);
+		free_piles(pile_a, pile_b);
+		exit(EXIT_FAILURE);
+	}
 }
 
 int	is_sorted(t_head *pile_a)

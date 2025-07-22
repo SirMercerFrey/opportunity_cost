@@ -50,6 +50,7 @@ BONUS_SRC	= \
 			bonus/split_utils.c \
 			bonus/parsing.c \
 			bonus/checking.c \
+			bonus/free_utils.c \
 			bonus/main.c 
 
 OBJ			= $(SRC:%.c=$(OBJ_DIR)/%.o)

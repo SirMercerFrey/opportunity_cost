@@ -12,7 +12,7 @@
 
 #include "push_swap_bonus.h"
 
-void	preambule(int argc, char **argv, t_head *pile_a)
+void	preambule(int argc, char **argv, t_head *pile_a, t_head *pile_b)
 {
 	char	**split;
 	int		i;
@@ -31,12 +31,13 @@ void	preambule(int argc, char **argv, t_head *pile_a)
 			{
 				printf("Error\n");
 				free_split(split);
+				free_piles(pile_a, pile_b);
 				exit(EXIT_FAILURE);
 			}
 			ft_lst_add_back(&pile_a, create_element(ft_atoi(split[j])));
 			++j;
 		}
-		free(split);
+		free_split(split);
 		++i;
 	}
 }

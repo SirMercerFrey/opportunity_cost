@@ -54,7 +54,7 @@ void	free_words(char **split, int i);
 char	**ft_split_by_space(char *str);
 void	free_split(char **split);
 int		is_valid_number(char *str);
-void	preambule(int argc, char **argv, t_head *pile_a);
+void	preambule(int argc, char **argv, t_head *pile_a, t_head *pile_b);
 void	swap_int(int *a, int *b);
 int		partition(int *tab, int start, int end);
 void	quick_sort(int *tab, int start, int end);
@@ -100,5 +100,7 @@ void	execute_instruction(char *line, t_head *pile_a, t_head *pile_b);
 int		is_sorted(t_head *pile_a);
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
 void	checking_sort(t_head *pile_a, t_head *pile_b);
+void	free_piles(t_head *pile_a, t_head *pile_b);
+void	free_piles_tab(t_head *pile_a, t_head *pile_b, int *tab);
 
 #endif

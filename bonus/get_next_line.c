@@ -14,6 +14,9 @@
 //Read from file descriptor and add to linked list
 //Extract from stash to line
 //Clean up stash
+// NOTE: Une fuite mineure (~17 bytes) peut être détectée par Valgrind
+// à cause du buffer statique de get_next_line(). Cette fuite est connue
+// et acceptéei (enfin j'espere) dans le cadre du projet push_swap_bonus.
 char	*get_next_line(int fd)
 {
 	static t_list	*stash;
