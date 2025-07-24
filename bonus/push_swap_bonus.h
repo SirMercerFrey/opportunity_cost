@@ -102,5 +102,6 @@ int		ft_strncmp(const char *s1, const char *s2, size_t n);
 void	checking_sort(t_head *pile_a, t_head *pile_b);
 void	free_piles(t_head *pile_a, t_head *pile_b);
 void	free_piles_tab(t_head *pile_a, t_head *pile_b, int *tab);
+void	wrong_instruction(char *line, t_head *pile_a, t_head *pile_b);
 
 #endif

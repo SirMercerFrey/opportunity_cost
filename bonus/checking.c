@@ -38,12 +38,7 @@ void	execute_instruction(char *line, t_head *pile_a, t_head *pile_b)
 	else if (!ft_strncmp(line, "rrr\n", 4))
 		reverse_rotate_both(pile_a, pile_b);
 	else
-	{
-		free(line);
-		write(1,"Error\n",6);
-		free_piles(pile_a, pile_b);
-		exit(EXIT_FAILURE);
-	}
+		wrong_instruction(line, pile_a, pile_b);
 }
 
 int	is_sorted(t_head *pile_a)
